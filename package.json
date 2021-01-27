@@ -1,0 +1,29 @@
+{
+  "name": "vuepress-plugin-tc-comment",
+  "version": "0.0.2",
+  "description": "Comment tc-comment plugin in vuepress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/artiely/vuepress-plugin-tc-comment.git"
+  },
+  "keywords": [
+    "vuepress",
+    "comment",
+    "plugin",
+    "vue",
+    "tc-comment"
+  ],
+  "author": "theajack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theajack/vuepress-plugin-tc-comment/issues"
+  },
+  "homepage": "https://github.com/theajack/vuepress-plugin-tc-comment#readme",
+  "dependencies": {
+    "tc-comment": "^0.0.5"
+  }
+}
