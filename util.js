@@ -20,7 +20,7 @@ export function loadScript () {
 export const provider = {
     render () {
         if (!dom) {
-            const parent = document.querySelector('main.page');
+            const parent = document.querySelector(COMMENT_CONTAINER);
             if (!parent) {
                 return false;
             }
@@ -31,7 +31,14 @@ export const provider = {
             dom.style.margin = '20px auto';
             parent.appendChild(dom);
             setTimeout(() => {
-                initComment({el: dom});
+                initComment({
+                    el: dom,
+                    urlConfig: {
+                        host: COMMENT_HOST,
+                        get: COMMENT_GET_URL,
+                        insert: COMMENT_INSERT_URL
+                    }
+                });
             });
         }
         return true;

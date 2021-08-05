@@ -34,6 +34,22 @@ module.exports = {
 }
 ```
 
+or use Options
+
+```javascript
+module.exports = {
+  plugins: [
+    'vuepress-plugin-tc-comment',
+    {
+      conteiner: '', // default is main.page
+      host: '', // View https://github.com/theajack/comment for details
+      getUrl: '',
+      insertUrl: '',
+    }
+  ]
+}
+```
+
 ## demo
 
 [https://theajack.gitee.io/cnchar](https://theajack.gitee.io/cnchar)
