@@ -1,53 +1,42 @@
 
-let initComment;
-loadScript();
 
-let dom = null;
 
-/**
- * Lazy load pkg
- *
- * @param {String} name
- */
-export function loadScript () {
+function loadScript (callback) {
     import('tc-comment')
-        .then(pkg => initComment = pkg.default);
+        .then(pkg => {callback(pkg.default)});
 }
 
-/**
- * Support Gitalk and so on.
- */
-export const provider = {
-    render () {
-        if (!dom) {
-            const parent = document.querySelector(COMMENT_CONTAINER);
-            if (!parent) {
-                return false;
-            }
-            dom = document.createElement('div');
-            dom.style.maxWidth = '1000px';
-            dom.style.minWidth = '300px';
-            dom.style.width = '80%';
-            dom.style.margin = '20px auto';
-            parent.appendChild(dom);
-            setTimeout(() => {
-                initComment({
-                    el: dom,
-                    urlConfig: {
-                        host: COMMENT_HOST,
-                        get: COMMENT_GET_URL,
-                        insert: COMMENT_INSERT_URL
-                    }
-                });
-            });
+let maxTime = 10;
+let time = 0;
+
+export function renderComment(){
+    const parent = document.querySelector(COMMENT_CONTAINER);
+    if (!parent) {
+        time ++;
+        if(time > maxTime){
+            console.warn(`父元素不存在：${COMMENT_CONTAINER}`)
+            return;
         }
-        return true;
-    },
-    clear () {
-        if (dom) {
-            dom.remove();
-            dom = null;
-        }
-        return true;
+        setTimeout(()=>{
+            renderComment();
+        }, 500)
+        return;
     }
-};
+    loadScript(initComment=>{
+        const dom = document.createElement('div');
+        dom.style.maxWidth = '1000px';
+        dom.style.minWidth = '300px';
+        dom.style.width = '80%';
+        dom.style.margin = '20px auto';
+        parent.appendChild(dom);
+        console.log('Vuepress-plugin-tc-comment：init comment');
+        initComment({
+            el: dom,
+            urlConfig: {
+                host: COMMENT_HOST,
+                get: COMMENT_GET_URL,
+                insert: COMMENT_INSERT_URL
+            }
+        });
+    });
+}

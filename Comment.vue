@@ -3,25 +3,14 @@
 </template>
 
 <script>
-import {
-  provider,
-  loadScript,
-} from './util'
-
-let timer = null
+import { renderComment } from './util';
 
 export default {
   mounted () {
-    renderComment();
+    setTimeout(()=>{
+      // ! 等待父元素渲染完成
+      renderComment()
+    }, 1000);
   }
-}
-
-function renderComment () {
-    timer = setTimeout(() => {
-      provider.clear()
-      if(!provider.render()){
-        renderComment()
-      }
-    }, 300)
 }
 </script>

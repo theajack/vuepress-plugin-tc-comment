@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-tc-comment",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "Comment tc-comment plugin in vuepress",
   "main": "index.js",
   "scripts": {
