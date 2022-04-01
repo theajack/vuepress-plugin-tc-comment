@@ -27,6 +27,7 @@ cnpm i --save vuepress-plugin-tc-comment
 ### Usage
 
 ```javascript
+// View https://github.com/theajack/comment for details
 module.exports = {
   plugins: [
     'vuepress-plugin-tc-comment'
@@ -45,6 +46,7 @@ module.exports = {
       host: '', // View https://github.com/theajack/comment for details
       getUrl: '',
       insertUrl: '',
+      replyUrl: '',
     }
   ]
 }

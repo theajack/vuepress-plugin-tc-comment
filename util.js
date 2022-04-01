@@ -35,7 +35,8 @@ export function renderComment(){
             urlConfig: {
                 host: COMMENT_HOST,
                 get: COMMENT_GET_URL,
-                insert: COMMENT_INSERT_URL
+                insert: COMMENT_INSERT_URL,
+                reply: REPLY_INSERT_URL,
             }
         });
     });

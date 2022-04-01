@@ -7,6 +7,7 @@ module.exports = (opts, ctx) => {
             COMMENT_HOST: opts.host || '',
             COMMENT_GET_URL: opts.getUrl || '',
             COMMENT_INSERT_URL: opts.insertUrl || '',
+            REPLY_INSERT_URL: opts.replyUrl || '',
         },
         enhanceAppFiles: path.resolve(__dirname, 'comment.js'),
         globalUIComponents: 'TCComment'
