@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-tc-comment",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Comment tc-comment plugin in vuepress",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/theajack/vuepress-plugin-tc-comment#readme",
   "dependencies": {
-    "tc-comment": "^0.0.11"
+    "tc-comment": "^0.0.12"
   }
 }
