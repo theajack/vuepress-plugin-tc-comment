@@ -28,6 +28,8 @@ cnpm i --save vuepress-plugin-tc-comment
 
 ### Usage
 
+[Config Detail](https://github.com/theajack/comment#tc-comment)
+
 ```javascript
 // View https://github.com/theajack/comment for details
 module.exports = {
