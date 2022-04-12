@@ -1,6 +1,6 @@
 # Vuepress-plugin-tc-comment
 
-[Demo](https://theajack.gitee.io/message-board)
+### [Demo](https://theajack.gitee.io/message-board)
 
 > Support [tc-comment](https://github.com/theajack/comment) plugins in Vuepress
 
