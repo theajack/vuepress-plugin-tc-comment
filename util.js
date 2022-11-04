@@ -30,14 +30,21 @@ export function renderComment(){
         dom.style.margin = '20px auto';
         parent.appendChild(dom);
         console.log('Vuepress-plugin-tc-comment：init comment');
-        initComment({
+
+        const data = {
             el: dom,
-            urlConfig: {
+            theme: THEME || undefined,
+            darkSelector: DARK_SELECTOR || undefined,
+        }
+        if(APP_NAME) data.appName = APP_NAME;
+        else {
+            data.urlConfig = {
                 host: COMMENT_HOST,
                 get: COMMENT_GET_URL,
                 insert: COMMENT_INSERT_URL,
                 reply: REPLY_INSERT_URL,
             }
-        });
+        }
+        initComment(data);
     });
 }
