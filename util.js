@@ -1,3 +1,10 @@
+/*
+ * @Author: chenzhongsheng
+ * @Date: 2022-11-04 20:47:42
+ * @Description: Coding something
+ * @LastEditors: chenzhongsheng
+ * @LastEditTime: 2022-11-04 20:58:02
+ */
 
 
 
@@ -22,7 +29,7 @@ export function renderComment(){
         }, 500)
         return;
     }
-    loadScript(initComment=>{
+    loadScript(def=>{
         const dom = document.createElement('div');
         dom.style.maxWidth = '1000px';
         dom.style.minWidth = '300px';
@@ -45,6 +52,6 @@ export function renderComment(){
                 reply: REPLY_INSERT_URL,
             }
         }
-        initComment(data);
+        def.initComment(data);
     });
 }
