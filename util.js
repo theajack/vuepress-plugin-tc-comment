@@ -3,14 +3,14 @@
  * @Date: 2022-11-04 20:47:42
  * @Description: Coding something
  * @LastEditors: chenzhongsheng
- * @LastEditTime: 2022-11-04 20:58:02
+ * @LastEditTime: 2022-11-04 21:00:52
  */
 
 
 
 function loadScript (callback) {
     import('tc-comment')
-        .then(pkg => {callback(pkg.default)});
+        .then(pkg => {callback(pkg)});
 }
 
 let maxTime = 10;
@@ -29,14 +29,14 @@ export function renderComment(){
         }, 500)
         return;
     }
-    loadScript(def=>{
+    loadScript(pkg=>{
         const dom = document.createElement('div');
         dom.style.maxWidth = '1000px';
         dom.style.minWidth = '300px';
         dom.style.width = '80%';
         dom.style.margin = '20px auto';
         parent.appendChild(dom);
-        console.log('Vuepress-plugin-tc-comment：init comment');
+        console.log('Vuepress-plugin-tc-comment：init comment: v'+pkg.version);
 
         const data = {
             el: dom,
@@ -52,6 +52,6 @@ export function renderComment(){
                 reply: REPLY_INSERT_URL,
             }
         }
-        def.initComment(data);
+        pkg.initComment(data);
     });
 }
